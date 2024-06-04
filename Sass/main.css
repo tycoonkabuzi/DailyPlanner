@@ -1,1 +1,73 @@
-/*# sourceMappingURL=main.css.map */
+@font-face {
+  font-family: Raleway;
+  src: url("../assets/fonts/Raleway/Raleway-VariableFont_wght.ttf");
+}
+@font-face {
+  font-family: Pacifico;
+  src: url("../assets/fonts/Pacifico/Pacifico-Regular.ttf");
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  font-family: Raleway;
+  display: grid;
+  grid-template-columns: 20% auto;
+}
+.main__menu {
+  background-color: #f1f1f7;
+  height: 800px;
+  text-align: center;
+}
+.main__menu ul {
+  width: 150px;
+  margin: auto;
+  margin-top: 100px;
+}
+.main__menu ul li {
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  text-align: left;
+  list-style: none;
+  margin-top: 40px;
+  color: rgb(98, 98, 160);
+}
+.main__menu ul li:hover {
+  color: rgb(226, 152, 165);
+  cursor: pointer;
+}
+.main__menu ul li img {
+  width: 40%;
+}
+.main__menu ul li p {
+  width: 100px;
+}
+.main__menu h1 {
+  display: block;
+  font-family: Pacifico;
+  color: rgb(98, 98, 160);
+  padding-top: 20px;
+}
+.main__menu span {
+  font-family: Raleway;
+  font-weight: 100;
+  color: rgb(226, 152, 165);
+}
+.main__content__title {
+  font-size: 24px;
+  color: rgb(98, 98, 160);
+  border-bottom: 1px solid rgb(98, 98, 160);
+  margin-top: 80px;
+  width: auto;
+  padding-bottom: 20px;
+  margin-left: 100px;
+}
+.main__content__inputs {
+  width: 80%;
+  display: grid;
+  margin: auto;
+  margin-top: 100px;
+}/*# sourceMappingURL=main.css.map */

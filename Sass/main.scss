@@ -1,0 +1,80 @@
+@font-face {
+  font-family: Raleway;
+  src: url("../assets/fonts/Raleway/Raleway-VariableFont_wght.ttf");
+}
+@font-face {
+  font-family: Pacifico;
+  src: url("../assets/fonts/Pacifico/Pacifico-Regular.ttf");
+}
+
+$primary: rgb(98, 98, 160);
+$secondary: rgb(226, 152, 165);
+* {
+  margin: 0;
+  padding: 0;
+}
+.main {
+  font-family: Raleway;
+  display: grid;
+  grid-template-columns: 20% auto;
+
+  &__menu {
+    background-color: lighten($primary, 45%);
+
+    height: 800px;
+    text-align: center;
+    ul {
+      width: 150px;
+      margin: auto;
+      margin-top: 100px;
+
+      li {
+        display: grid;
+        grid-template-columns: auto auto;
+        align-items: center;
+        text-align: left;
+        list-style: none;
+        margin-top: 40px;
+        color: $primary;
+        &:hover {
+          color: $secondary;
+          cursor: pointer;
+        }
+        img {
+          width: 40%;
+        }
+        p {
+          width: 100px;
+        }
+      }
+    }
+    h1 {
+      display: block;
+      font-family: Pacifico;
+      color: $primary;
+      padding-top: 20px;
+    }
+    span {
+      font-family: Raleway;
+      font-weight: 100;
+      color: $secondary;
+    }
+  }
+  &__content {
+    &__title {
+      font-size: 24px;
+      color: $primary;
+      border-bottom: 1px solid $primary;
+      margin-top: 80px;
+      width: auto;
+      padding-bottom: 20px;
+      margin-left: 100px;
+    }
+    &__inputs {
+      width: 80%;
+      display: grid;
+      margin: auto;
+      margin-top: 100px;
+    }
+  }
+}
