@@ -9,6 +9,14 @@
 
 $primary: rgb(98, 98, 160);
 $secondary: rgb(226, 152, 165);
+
+@mixin buttonUrgency {
+  width: 50px;
+  height: 50px;
+  border-radius: 30%;
+  &:hover {
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -66,7 +74,7 @@ $secondary: rgb(226, 152, 165);
       color: $primary;
       border-bottom: 1px solid $primary;
       margin-top: 80px;
-      width: auto;
+      width: 85%;
       padding-bottom: 20px;
       margin-left: 100px;
     }
@@ -74,7 +82,88 @@ $secondary: rgb(226, 152, 165);
       width: 80%;
       display: grid;
       margin: auto;
-      margin-top: 100px;
+      margin-top: 50px;
+
+      input {
+        margin-top: 20px;
+        height: 40px;
+        border: solid 1px $primary;
+        padding-left: 20px;
+        font-family: Raleway;
+        padding-right: 20px;
+      }
+      &__howLong {
+        margin-top: 20px;
+        &__container {
+          display: flex;
+          margin-top: 10px;
+          gap: 20px;
+          background-color: rgb(197, 222, 238);
+          padding-left: 25px;
+          padding-right: 25px;
+          height: 40px;
+          align-items: center;
+          li {
+            list-style: none;
+            color: lighten($primary, 5);
+            cursor: pointer;
+          }
+          .clicked {
+            background-color: red;
+            padding: 14px;
+            border-radius: 2px;
+            color: white;
+            background-color: darken(rgb(197, 222, 238), 40);
+          }
+        }
+      }
+
+      textarea {
+        padding-left: 20px;
+        margin-top: 20px;
+        border: solid 1px $primary;
+        padding-top: 10px;
+        font-family: Raleway;
+      }
+    }
+    &__urgency {
+      width: 50%;
+      margin: auto;
+      margin-top: 50px;
+
+      &__colors {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        &--red {
+          background-color: rgb(216, 34, 34);
+          @include buttonUrgency();
+        }
+        &--orange {
+          background-color: rgb(246, 179, 57);
+          @include buttonUrgency();
+        }
+        &--yellow {
+          background-color: rgb(202, 202, 33);
+          @include buttonUrgency();
+        }
+        &--green {
+          background-color: rgb(22, 122, 22);
+          @include buttonUrgency();
+        }
+      }
+    }
+    button {
+      background-color: $primary;
+      width: 100px;
+      height: 50px;
+      border: none;
+      color: white;
+      border-radius: 6px;
+      margin-left: 34%;
+      margin-top: 30px;
+      &:hover {
+        background-color: $secondary;
+      }
     }
   }
 }

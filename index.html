@@ -32,12 +32,43 @@
       <div class="main__content">
         <div class="main__content__title">New event</div>
         <div class="main__content__inputs">
-          <input type="text" placeholder="Event" />Event
-          <input type="date" placeholder="Date" />Event
+          <input type="text" placeholder="Event" />
+          <input type="date" placeholder="Date" />
+          <div class="main__content__inputs__howLong">
+            <p>How long?</p>
+            <ul class="main__content__inputs__howLong__container">
+              <li>1min</li>
+              <li>5min</li>
+              <li>15min</li>
+              <li>30min</li>
+              <li>45min</li>
+              <li>1h</li>
+              <li>1.5h</li>
+              <li>1.15h</li>
+              <li>1.30h</li>
+              <li>1.45h</li>
+              <li>2h</li>
+              <li>2.5h</li>
+              <li>2.15h</li>
+              <li>2.30h</li>
+              <li>2.45h</li>
+              <li>3h</li>
+              <li>More</li>
+            </ul>
+          </div>
           <textarea name="" id="" cols="30" rows="10">Notes</textarea>
         </div>
-        <div class="main__content_urgencies"></div>
+        <div class="main__content__urgency">
+          <div class="main__content__urgency__colors">
+            <div class="main__content__urgency__colors--red"></div>
+            <div class="main__content__urgency__colors--orange"></div>
+            <div class="main__content__urgency__colors--yellow"></div>
+            <div class="main__content__urgency__colors--green"></div>
+          </div>
+          <button>Submit</button>
+        </div>
       </div>
     </div>
+    <script src="/js/script.js"></script>
   </body>
 </html>
