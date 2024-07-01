@@ -1,6 +1,7 @@
 const howLong = document.querySelector(
   ".main__content__inputs__howLong__container"
 );
+let buttons = howLong.querySelectorAll("li");
 const addTime = document.getElementById("add");
 let arrayAllTime = [];
 let doubleArray = [];
@@ -13,17 +14,18 @@ function highlightButtonWhenClicking(e) {
 }
 
 // when clicking on more, being able to retrieve the data from the list and multiply it or change it.
-function retrieveDataFromtheList(buttons) {
+function retrieveDataFromtheList() {
+  const buttons = howLong.querySelectorAll("li"); // Update buttons dynamically
   arrayAllTime = [];
   buttons.forEach((button) => {
     // remove more from the list of numbers to be multiplied.
     if (button.textContent != "More") {
       time = button.textContent.replace(/min|h/g, "");
-      //doubleArray.length = timeInNumberArray.length;
-      arrayAllTime.push(parseFloat(time));
+      if (!isNaN(time) && time !== "") {
+        arrayAllTime.push(parseFloat(time));
+      }
     }
   });
-  console.log("allArray" + arrayAllTime);
 }
 
 // here we take the largest number in the array we just created from the buttons.
@@ -36,17 +38,19 @@ function findMaximum(array) {
   }
   return max;
 }
+// Here we add a certain number of minutes from the highest element in the array till
 
 function addMinutesToElement(max) {
   doubleArray = [];
-  for (let i = 1; i < arrayAllTime.length; i++) {
+  howLong.innerHTML = "";
+  for (let i = 2; i < arrayAllTime.length; i++) {
     let tobeAdded = i * 5;
     let hour = Math.floor((max + tobeAdded) / 60);
     let minute = (max + tobeAdded) % 60;
-    doubleArray.push(hour + "." + minute + "h");
-    howLong.innerHTML = "";
+    doubleArray.push(hour + "h" + minute + "min");
   }
-  console.log(doubleArray);
+
+  doubleArray.push("More");
 }
 
 function displayNewTime() {
@@ -54,16 +58,27 @@ function displayNewTime() {
     const time = document.createElement("li");
     time.innerText = element;
     howLong.appendChild(time);
-  });
-}
 
-//calling the higlight Button when clicking.
-howLong.addEventListener("click", highlightButtonWhenClicking);
-addTime.addEventListener("click", () => {
-  let buttons = howLong.querySelectorAll("li");
-  retrieveDataFromtheList(buttons);
+    if (element == "More") {
+      time.classList.add("add");
+      time.addEventListener("click", addMoreTime);
+    }
+  });
+
+  return doubleArray;
+}
+function addMoreTime() {
+  retrieveDataFromtheList();
   let maxMinutes = findMaximum(arrayAllTime);
   addMinutesToElement(maxMinutes);
   displayNewTime();
   console.log(arrayAllTime);
-});
+  console.log(doubleArray);
+  console.log("clicked");
+}
+
+//calling the higlight Button when clicking.
+howLong.addEventListener("click", highlightButtonWhenClicking);
+addTime.addEventListener("click", addMoreTime);
+
+//
