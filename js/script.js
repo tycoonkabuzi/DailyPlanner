@@ -34,17 +34,13 @@ function extractTimeToString() {
   buttons.forEach((button) => {
     let hour = button.textContent.match(/(\d+)h/);
     let min = button.textContent.match(/(\d+)'/);
-
-    if (min != null) {
-      let hourInt = parseInt(hour[1]);
-      let minInt = parseInt(min[1]);
-      let total = hourInt * 60 + minInt;
-      newArray.push(total);
-    } else {
-      newArray = arrayAllTime;
-    }
+    let hourInt = hour ? parseInt(hour[1]) : 1;
+    let minInt = min ? parseInt(min[1]) : -15;
+    let total = hourInt * 60 + minInt;
+    newArray.push(total);
+    console.log(total);
   });
-  console.log(newArray);
+
   return newArray;
 }
 // here we take the largest number in the array we just created from the buttons.
