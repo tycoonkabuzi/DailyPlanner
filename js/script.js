@@ -1,3 +1,26 @@
+const navMenu = document.querySelector(".main__menu");
+const mainTitle = document.querySelector(".main__content__title");
+const linkNav = navMenu.querySelectorAll("a");
+linkNav.forEach((link) => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    console.log(link.href);
+    history.pushState({}, "", link.href);
+    navigate(link.href);
+  });
+});
+console.log(linkNav);
+// function allowing to get the link and to transform it into a text
+function navigate(link) {
+  let url = new URL(link);
+  let rawUrl = url.pathname;
+  let theUrl = rawUrl.replace("/", "");
+  let UrlFirstLetterUppercase =
+    theUrl == "" ? "Home" : theUrl[0].toUpperCase() + theUrl.slice(1);
+  mainTitle.textContent = UrlFirstLetterUppercase;
+}
+//------------------------------------
+
 const howLong = document.querySelector(
   ".main__content__inputs__howLong__container"
 );
