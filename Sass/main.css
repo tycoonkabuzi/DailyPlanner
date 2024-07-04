@@ -60,6 +60,50 @@ a {
   font-weight: 100;
   color: rgb(226, 152, 165);
 }
+.main__content__content {
+  width: 90%;
+  margin: auto;
+  display: grid;
+  margin-top: 20px;
+  grid-template-columns: auto auto auto;
+}
+.main__content__content__day {
+  margin-top: 40px;
+  width: 330px;
+  height: 170px;
+  border: 1px solid rgb(98, 98, 160);
+}
+.main__content__content__day__title {
+  font-size: 34px;
+  font-weight: 800;
+  color: rgb(98, 98, 160);
+  margin-top: -20px;
+  background-color: white;
+  width: 200px;
+  margin-left: 10px;
+  padding-bottom: 20px;
+}
+.main__content__content__day__content {
+  padding-left: 20px;
+  padding-right: 20px;
+  color: rgb(99, 99, 99);
+}
+.main__content__content__day__content li {
+  list-style: none;
+  margin-top: 5px;
+}
+.main__content__content__day__content #red {
+  background-color: #fde3e3;
+}
+.main__content__content__day__content #yellow {
+  background-color: #fcfcde;
+}
+.main__content__content__day__content #green {
+  background-color: #eeffee;
+}
+.main__content__content__day__content #orange {
+  background-color: #fdf0dc;
+}
 .main__content__title {
   font-size: 24px;
   color: rgb(98, 98, 160);

@@ -1,23 +1,79 @@
 const navMenu = document.querySelector(".main__menu");
 const mainTitle = document.querySelector(".main__content__title");
 const linkNav = navMenu.querySelectorAll("a");
+const mainContent = document.querySelector(".main__content");
+const routes = {
+  "/": {
+    titleHead: "Daily planner| Home",
+    titleContent: "Welcome to your Daily plan",
+    content: "",
+  },
+  "/add": {
+    titleHead: "Daily planner| New Event",
+    titleContent: "Add a new event",
+    content: `<div class="main__content__title">New event</div>
+        <div class="main__content__inputs">
+          <input type="text" placeholder="Event" />
+          <input type="date" placeholder="Date" />
+          <div class="main__content__inputs__howLong">
+            <p>How long?</p>
+            <ul class="main__content__inputs__howLong__container">
+              <li>5min</li>
+              <li>10min</li>
+              <li>15min</li>
+              <li>20min</li>
+              <li>25min</li>
+              <li>30min</li>
+              <li>35min</li>
+              <li>40min</li>
+              <li>45min</li>
+              <li>50min</li>
+              <li id="add">More</li>
+            </ul>
+          </div>
+          <textarea name="" id="" cols="30" rows="10">Notes</textarea>
+        </div>
+        <div class="main__content__urgency">
+          <div class="main__content__urgency__colors">
+            <div class="main__content__urgency__colors--red"></div>
+            <div class="main__content__urgency__colors--orange"></div>
+            <div class="main__content__urgency__colors--yellow"></div>
+            <div class="main__content__urgency__colors--green"></div>
+          </div>
+          <button>Submit</button>
+        </div>`,
+  },
+  "/dashboard": {
+    titleHead: "Daily planner| Dashboard",
+    titleContent: "Here is the dashboard",
+    content: "",
+  },
+  "/help": {
+    titleHead: "Daily planner| Help",
+    titleContent: "Need some help ? ",
+    content: "",
+  },
+};
 linkNav.forEach((link) => {
   link.addEventListener("click", (e) => {
     e.preventDefault();
-    console.log(link.href);
     history.pushState({}, "", link.href);
     navigate(link.href);
   });
 });
-console.log(linkNav);
+
 // function allowing to get the link and to transform it into a text
 function navigate(link) {
-  let url = new URL(link);
-  let rawUrl = url.pathname;
-  let theUrl = rawUrl.replace("/", "");
-  let UrlFirstLetterUppercase =
-    theUrl == "" ? "Home" : theUrl[0].toUpperCase() + theUrl.slice(1);
-  mainTitle.textContent = UrlFirstLetterUppercase;
+  const url = new URL(link);
+  const route = routes[url.pathname];
+  console.log(link);
+  if (route) {
+    let domTitle = document.getElementById("titleDisplay");
+    domTitle.textContent = route.titleHead;
+    mainContent.innerHTML = route.content;
+  } else {
+    console.log("Nie ma");
+  }
 }
 //------------------------------------
 

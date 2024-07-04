@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./Sass/main.css" />
-    <title>Daily Planner| welcome</title>
+    <title id="titleDisplay">Daily Planner| welcome</title>
   </head>
   <body>
     <div class="main">
@@ -38,36 +38,83 @@
         </ul>
       </div>
       <div class="main__content">
-        <div class="main__content__title">New event</div>
-        <div class="main__content__inputs">
-          <input type="text" placeholder="Event" />
-          <input type="date" placeholder="Date" />
-          <div class="main__content__inputs__howLong">
-            <p>How long?</p>
-            <ul class="main__content__inputs__howLong__container">
-              <li>5min</li>
-              <li>10min</li>
-              <li>15min</li>
-              <li>20min</li>
-              <li>25min</li>
-              <li>30min</li>
-              <li>35min</li>
-              <li>40min</li>
-              <li>45min</li>
-              <li>50min</li>
-              <li id="add">More</li>
-            </ul>
+        <div class="main__content__title">Welcome to your Daily Plan</div>
+        <div class="main__content__content">
+          <div class="main__content__content__day">
+            <div class="main__content__content__day__title">Monday</div>
+            <div class="main__content__content__day__content">
+              <ul>
+                <li id="yellow">Aller au boulot</li>
+                <li id="orange">Etudier un nouveau programme</li>
+                <li id="green">Creer une nouvelle version de mon programme</li>
+                <li>More..</li>
+              </ul>
+            </div>
           </div>
-          <textarea name="" id="" cols="30" rows="10">Notes</textarea>
-        </div>
-        <div class="main__content__urgency">
-          <div class="main__content__urgency__colors">
-            <div class="main__content__urgency__colors--red"></div>
-            <div class="main__content__urgency__colors--orange"></div>
-            <div class="main__content__urgency__colors--yellow"></div>
-            <div class="main__content__urgency__colors--green"></div>
+          <div class="main__content__content__day">
+            <div class="main__content__content__day__title">Tuesday</div>
+            <div class="main__content__content__day__content">
+              <ul>
+                <li id="orange">Aller au boulot</li>
+                <li id="yellow">Etudier un nouveau programme</li>
+                <li id="green">Creer une nouvelle version de mon programme</li>
+              </ul>
+            </div>
           </div>
-          <button>Submit</button>
+          <div class="main__content__content__day">
+            <div class="main__content__content__day__title">Wednesday</div>
+            <div class="main__content__content__day__content">
+              <ul>
+                <li id="green">Aller au boulot</li>
+                <li id="yellow">Etudier un nouveau programme</li>
+                <li id="orange">Creer une nouvelle version de mon programme</li>
+              </ul>
+            </div>
+          </div>
+          <div class="main__content__content__day">
+            <div class="main__content__content__day__title">Thursday</div>
+            <div class="main__content__content__day__content">
+              <ul>
+                <li id="red">Aller au boulot</li>
+                <li id="orange">Etudier un nouveau programme</li>
+                <li id="yellow">Creer une nouvelle version de mon programme</li>
+                <li>More..</li>
+              </ul>
+            </div>
+          </div>
+          <div class="main__content__content__day">
+            <div class="main__content__content__day__title">Friday</div>
+            <div class="main__content__content__day__content">
+              <ul>
+                <li id="green">Aller au boulot</li>
+                <li id="yellow">Etudier un nouveau programme</li>
+                <li id="orange">Creer une nouvelle version de mon programme</li>
+                <li>More..</li>
+              </ul>
+            </div>
+          </div>
+          <div class="main__content__content__day">
+            <div class="main__content__content__day__title">Saturday</div>
+            <div class="main__content__content__day__content">
+              <ul>
+                <li id="yellow">Aller au boulot</li>
+                <li id="orange">Etudier un nouveau programme</li>
+                <li id="green">Creer une nouvelle version de mon programme</li>
+                <li>More..</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="main__content__content__day">
+            <div class="main__content__content__day__title">Sunday</div>
+            <div class="main__content__content__day__content">
+              <ul>
+                <li id="orange">Aller au boulot</li>
+                <li id="yellow">Etudier un nouveau programme</li>
+                <li id="green">Creer une nouvelle version de mon programme</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>

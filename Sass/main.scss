@@ -9,6 +9,11 @@
 
 $primary: rgb(98, 98, 160);
 $secondary: rgb(226, 152, 165);
+$grayText: rgb(99, 99, 99);
+$red: rgb(239, 37, 37);
+$green: rgb(40, 249, 40);
+$yellow: rgb(234, 234, 36);
+$orange: rgb(241, 156, 28);
 
 @mixin buttonUrgency {
   width: 50px;
@@ -72,6 +77,51 @@ a {
     }
   }
   &__content {
+    &__content {
+      width: 90%;
+      margin: auto;
+      display: grid;
+      margin-top: 20px;
+      grid-template-columns: auto auto auto;
+      &__day {
+        margin-top: 40px;
+        width: 330px;
+        height: 170px;
+        border: 1px solid $primary;
+        &__title {
+          font-size: 34px;
+          font-weight: 800;
+          color: $primary;
+          margin-top: -20px;
+          background-color: white;
+          width: 200px;
+          margin-left: 10px;
+          padding-bottom: 20px;
+        }
+        &__content {
+          padding-left: 20px;
+          padding-right: 20px;
+
+          color: $grayText;
+          li {
+            list-style: none;
+            margin-top: 5px;
+          }
+          #red {
+            background-color: lighten($red, 40%);
+          }
+          #yellow {
+            background-color: lighten($yellow, 40%);
+          }
+          #green {
+            background-color: lighten($green, 40%);
+          }
+          #orange {
+            background-color: lighten($orange, 40%);
+          }
+        }
+      }
+    }
     &__title {
       font-size: 24px;
       color: $primary;
@@ -81,6 +131,7 @@ a {
       padding-bottom: 20px;
       margin-left: 100px;
     }
+
     &__inputs {
       width: 80%;
       display: grid;
