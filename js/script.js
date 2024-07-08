@@ -1,3 +1,7 @@
+document.addEventListener("DOMContentLoaded", () => {
+  navigate(Object.values(linkNav)[0]);
+  console.log();
+});
 const navMenu = document.querySelector(".main__menu");
 const mainTitle = document.querySelector(".main__content__title");
 const linkNav = navMenu.querySelectorAll("a");
@@ -6,7 +10,84 @@ const routes = {
   "/": {
     titleHead: "Daily planner| Home",
     titleContent: "Welcome to your Daily plan",
-    content: "",
+    content: `<div class="main__content__title">Welcome to your Daily Plan</div>
+        <div class="main__content__content">
+          <div class="main__content__content__day">
+            <div class="main__content__content__day__title">Monday</div>
+            <div class="main__content__content__day__content">
+              <ul>
+                <li id="yellow">Aller au boulot</li>
+                <li id="orange">Etudier un nouveau programme</li>
+                <li id="green">Creer une nouvelle version de mon programme</li>
+                <li>More..</li>
+              </ul>
+            </div>
+          </div>
+          <div class="main__content__content__day">
+            <div class="main__content__content__day__title">Tuesday</div>
+            <div class="main__content__content__day__content">
+              <ul>
+                <li id="orange">Aller au boulot</li>
+                <li id="yellow">Etudier un nouveau programme</li>
+                <li id="green">Creer une nouvelle version de mon programme</li>
+              </ul>
+            </div>
+          </div>
+          <div class="main__content__content__day">
+            <div class="main__content__content__day__title">Wednesday</div>
+            <div class="main__content__content__day__content">
+              <ul>
+                <li id="green">Aller au boulot</li>
+                <li id="yellow">Etudier un nouveau programme</li>
+                <li id="orange">Creer une nouvelle version de mon programme</li>
+              </ul>
+            </div>
+          </div>
+          <div class="main__content__content__day">
+            <div class="main__content__content__day__title">Thursday</div>
+            <div class="main__content__content__day__content">
+              <ul>
+                <li id="red">Aller au boulot</li>
+                <li id="orange">Etudier un nouveau programme</li>
+                <li id="yellow">Creer une nouvelle version de mon programme</li>
+                <li>More..</li>
+              </ul>
+            </div>
+          </div>
+          <div class="main__content__content__day">
+            <div class="main__content__content__day__title">Friday</div>
+            <div class="main__content__content__day__content">
+              <ul>
+                <li id="green">Aller au boulot</li>
+                <li id="yellow">Etudier un nouveau programme</li>
+                <li id="orange">Creer une nouvelle version de mon programme</li>
+                <li>More..</li>
+              </ul>
+            </div>
+          </div>
+          <div class="main__content__content__day">
+            <div class="main__content__content__day__title">Saturday</div>
+            <div class="main__content__content__day__content">
+              <ul>
+                <li id="yellow">Aller au boulot</li>
+                <li id="orange">Etudier un nouveau programme</li>
+                <li id="green">Creer une nouvelle version de mon programme</li>
+                <li>More..</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="main__content__content__day">
+            <div class="main__content__content__day__title">Sunday</div>
+            <div class="main__content__content__day__content">
+              <ul>
+                <li id="orange">Aller au boulot</li>
+                <li id="yellow">Etudier un nouveau programme</li>
+                <li id="green">Creer une nouvelle version de mon programme</li>
+              </ul>
+            </div>
+          </div>
+        </div>`,
   },
   "/add": {
     titleHead: "Daily planner| New Event",
